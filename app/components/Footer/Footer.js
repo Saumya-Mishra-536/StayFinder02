@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 function Footer() {
   return (
@@ -7,10 +8,10 @@ function Footer() {
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <p className="text-2xl font-semibold mb-4 sm:mb-0">StayFinder &mdash; Find your perfect stay</p>
           <div className="flex space-x-6 mb-4 sm:mb-0">
-            <a href="/" className="text-gray-400 hover:text-white transition duration-300">Home</a>
-            <a href="/search.html" className="text-gray-400 hover:text-white transition duration-300">Search</a>
-            <a href="/about.html" className="text-gray-400 hover:text-white transition duration-300">About</a>
-            <a href="/contact.html" className="text-gray-400 hover:text-white transition duration-300">Contact</a>
+            <Link href="/" className="text-gray-400 hover:text-white transition duration-300">Home</Link>
+            <Link href="/ExplorePage" className="text-gray-400 hover:text-white transition duration-300">Explore</Link>
+            <Link href="/AboutPage" className="text-gray-400 hover:text-white transition duration-300">About</Link>
+            <Link href="/Contact" className="text-gray-400 hover:text-white transition duration-300">Contact</Link>
           </div>
         </div>
         <div className="text-center mt-6">
