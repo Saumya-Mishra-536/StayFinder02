@@ -40,12 +40,12 @@ function Navbar() {
             Logout
           </button>
         ) : (
-          <a
-            href="/login.html"
-            className="ml-4 px-6 py-2 bg-white border-2 border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition duration-300"
+          <Link
+            href="/LoginPage"
+            className="bg-blue-900 text-white px-6 py-2 rounded-md hover:bg-white hover:text-blue-900 transition duration-300"
           >
-            Login
-          </a>
+            Log In
+          </Link>
         )}
       </div>
     </nav>
