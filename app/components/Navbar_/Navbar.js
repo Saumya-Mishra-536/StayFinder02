@@ -44,7 +44,7 @@ function Navbar() {
             href="/LoginPage"
             className="bg-blue-900 text-white px-6 py-2 rounded-md hover:bg-white hover:text-blue-900 transition duration-300"
           >
-            Log In
+          Sign Up
           </Link>
         )}
       </div>

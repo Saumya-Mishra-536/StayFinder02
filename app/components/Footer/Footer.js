@@ -6,7 +6,14 @@ function Footer() {
     <footer className="bg-gray-800 text-white py-8">
       <div className="max-w-screen-lg mx-auto px-4">
         <div className="flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-2xl font-semibold mb-4 sm:mb-0">StayFinder &mdash; Find your perfect stay</p>
+        <p
+  className="text-2xl font-semibold mb-4 sm:mb-0 text-white"
+  style={{ fontFamily: 'Times New Roman, Times, serif' }}
+>
+  StayFinder – Find your perfect stay
+</p>
+
+
           <div className="flex space-x-6 mb-4 sm:mb-0">
             <Link href="/" className="text-gray-400 hover:text-white transition duration-300">Home</Link>
             <Link href="/ExplorePage" className="text-gray-400 hover:text-white transition duration-300">Explore</Link>
