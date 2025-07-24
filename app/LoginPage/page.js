@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { FaSpinner, FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ export default function Login() {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
   const router = useRouter();
 
   const handleChange = (e) => {
@@ -19,51 +22,57 @@ export default function Login() {
       ...prev,
       [name]: value
     }));
+    setError('');
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setError('');
     
     try {
-      // Simulate API call - replace with your actual login logic
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Example: redirect to dashboard after successful login
-      // router.push('/dashboard');
-      
-      alert('Login successful!');
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          rememberMe
+        }),
+      });
+
+      if (res.ok) {
+        router.push('/dashboard');
+      } else {
+        const data = await res.json();
+        setError(data.message || 'Invalid email or password');
+      }
     } catch (error) {
-      console.error('Login failed:', error);
-      alert('Login failed. Please try again.');
+      setError('Something went wrong. Please try again.');
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleSocialLogin = (provider) => {
-    // Handle social login logic here
-    console.log(`Login with ${provider}`);
-  };
-
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex">
       {/* Left Side - Form */}
       <div className="flex-1 flex items-center justify-center px-4 py-12 sm:px-6 lg:px-20 xl:px-24">
-        <div className="mx-auto w-full max-w-sm lg:w-96">
-          {/* Logo/Brand */}
+        <div className="w-full max-w-md">
           <div className="text-center mb-8">
-          
-            <h1 className="text-3xl font-black text-white-900 mb-2">Welcome Back</h1>
-            <p className="text-gray-600 font-medium">Sign in to your account to continue</p>
+            <h2 className="text-3xl font-bold text-gray-900">Welcome back</h2>
+            <p className="mt-2 text-gray-600">Sign in to continue to StayFinder</p>
           </div>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Email Input */}
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {error && (
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+                {error}
+              </div>
+            )}
+
             <div>
-              <label htmlFor="email" className="block text-sm font-bold text-white-700 mb-2 uppercase tracking-wide">
-                Email Address
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                Email address
               </label>
               <input
                 id="email"
@@ -72,15 +81,14 @@ export default function Login() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="appearance-none block w-full px-4 py-3 border-2 border-gray-200 rounded-xl placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 font-medium"
-                placeholder="Enter your email"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all text-gray-900 placeholder-gray-400"
+                placeholder="name@company.com"
                 autoComplete="email"
               />
             </div>
 
-            {/* Password Input */}
             <div>
-              <label htmlFor="password" className="block text-sm font-bold text-white-700 mb-2 uppercase tracking-wide">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                 Password
               </label>
               <div className="relative">
@@ -91,142 +99,141 @@ export default function Login() {
                   required
                   value={formData.password}
                   onChange={handleChange}
-                  className="appearance-none block w-full px-4 py-3 pr-12 border-2 border-white-200 rounded-xl placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 font-medium"
-                  placeholder="Enter your password"
+                  className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all text-gray-900 placeholder-gray-400"
+                  placeholder="••••••••"
                   autoComplete="current-password"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-lg hover:text-gray-600 transition-colors"
-                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
                 >
-                  {showPassword ? '🙈' : '👁️'}
+                  {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
                 </button>
               </div>
             </div>
 
-            {/* Remember Me & Forgot Password */}
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input
                   id="remember-me"
-                  name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
+                  className="w-4 h-4 text-slate-600 border-gray-300 rounded focus:ring-slate-500"
                 />
-                <label htmlFor="remember-me" className="ml-2 block text-sm font-medium text-gray-700">
+                <label htmlFor="remember-me" className="ml-2 text-sm text-gray-600">
                   Remember me
                 </label>
               </div>
-              <div className="text-sm">
-                <Link 
-                  href="/forgot-password" 
-                  className="font-semibold text-blue-600 hover:text-blue-500 transition-colors"
-                >
-                  Forgot password? 
-                </Link>
-              </div>
-            </div>
-
-            {/* Submit Button */}
-            <div>
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-lg font-black rounded-xl text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-4 focus:ring-blue-500/20 disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-0.5 transition-all duration-200 shadow-lg hover:shadow-xl uppercase tracking-wide"
+              <Link 
+                href="/forgot-password" 
+                className="text-sm text-slate-600 hover:text-slate-700 font-medium"
               >
-                {isLoading ? (
-                  <div className="flex items-center">
-                    <span className="mr-2 animate-spin"></span>
-                    Signing In...
-                  </div>
-                ) : (
-                  <>
-                    Sign In
-                  </>
-                )}
-              </button>
+                Forgot password?
+              </Link>
             </div>
 
-            {/* Divider */}
-            <div className="relative my-6">
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isLoading ? (
+                <span className="flex items-center justify-center">
+                  <FaSpinner className="animate-spin mr-2" />
+                  Signing in...
+                </span>
+              ) : (
+                'Sign in'
+              )}
+            </button>
+          </form>
+
+          <div className="mt-6">
+            <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
+                <div className="w-full border-t border-gray-300"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500 font-medium"> Or continue with </span>
+                <span className="px-2 bg-gradient-to-br from-slate-50 to-slate-100 text-gray-500">
+                  New to StayFinder?
+                </span>
               </div>
             </div>
 
-            {/* Social Login Buttons */}
-            <div className="grid grid-cols-2 gap-3">
-              <button
-                type="button"
-                onClick={() => handleSocialLogin('Google')}
-                className="w-full inline-flex justify-center py-3 px-4 border-2 border-gray-200 rounded-xl shadow-sm bg-white text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200"
+            <div className="mt-6">
+              <Link
+                href="/SignUp"
+                className="w-full flex justify-center py-3 px-4 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-colors"
               >
-                <span className="text-lg mr-2">🌐</span>
-                Google
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleSocialLogin('Apple')}
-                className="w-full inline-flex justify-center py-3 px-4 border-2 border-gray-200 rounded-xl shadow-sm bg-white text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200"
-              >Apple
-              </button>
+                Create an account
+              </Link>
             </div>
+          </div>
 
-            {/* Sign Up Link */}
-            <div className="text-center">
-              <p className="text-sm font-medium text-gray-600">
-                Don't have an account? {' '}
-                <Link 
-                  href="/signup" 
-                  className="font-bold text-blue-600 hover:text-blue-500 transition-colors"
-                >
-                  Sign up for free! 
-                </Link>
-              </p>
-            </div>
-          </form>
+          {/* Security Notice */}
+          <div className="mt-8 text-center">
+            <p className="text-xs text-gray-500">
+              Protected by enterprise-grade security.{' '}
+              <Link href="/security" className="underline hover:text-gray-700">
+                Learn more
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Right Side - Background Pattern */}
-      <div className="hidden lg:block relative w-0 flex-1">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700">
-          {/* Simple Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="grid grid-cols-8 gap-4 h-full p-8">
-              {[...Array(64)].map((_, i) => (
-                <div 
-                  key={i} 
-                  className="bg-white rounded-lg opacity-30 animate-pulse"
-                  style={{animationDelay: `${i * 100}ms`}}
-                ></div>
-              ))}
+      {/* Right Side - Branding */}
+      <div className="hidden lg:flex flex-1 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]"></div>
+        <div className="relative z-10 flex flex-col justify-center px-16 text-white">
+          <h1 className="text-5xl font-bold mb-4">StayFinder</h1>
+          <p className="text-xl text-slate-300 mb-12 leading-relaxed">
+            Welcome back! Your next perfect stay is just a click away.
+          </p>
+          
+          {/* Stats */}
+          <div className="grid grid-cols-2 gap-8 mb-12">
+            <div>
+              <div className="text-4xl font-bold mb-2">2M+</div>
+              <div className="text-slate-400">Active Properties</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">4.8</div>
+              <div className="text-slate-400">Average Rating</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">150+</div>
+              <div className="text-slate-400">Countries</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">24/7</div>
+              <div className="text-slate-400">Customer Support</div>
             </div>
           </div>
-          
-          {/* Content Overlay */}
-          <div className="relative h-full flex items-center justify-center p-12">
-            <div className="text-center">
-              <div className="text-8xl mb-6">🏠</div>
-              <h2 className="text-4xl font-black text-white mb-6">
-                Join Our Community
-              </h2>
-              <p className="text-xl text-blue-100 font-medium max-w-md mx-auto leading-relaxed mb-8">
-                Connect with thousands of users and discover amazing experiences with StayFinder.
-              </p>
-              <div className="flex justify-center space-x-2 text-2xl">
 
-                <span className="animate-bounce" style={{animationDelay: '0.4s'}}>🌟</span>
+          {/* Testimonial */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div className="flex items-center mb-4">
+              <div className="text-yellow-400 text-lg">★★★★★</div>
+            </div>
+            <p className="text-slate-200 italic mb-4">
+              "StayFinder made finding my perfect vacation rental so easy. The process was smooth and secure!"
+            </p>
+            <div className="flex items-center">
+              <div className="w-10 h-10 bg-slate-600 rounded-full mr-3"></div>
+              <div>
+                <div className="font-semibold text-sm">Sarah Johnson</div>
+                <div className="text-slate-400 text-xs">Verified Customer</div>
               </div>
             </div>
           </div>
         </div>
+        
+        {/* Decorative elements */}
+        <div className="absolute top-20 right-20 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
       </div>
     </div>
   );

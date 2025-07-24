@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar_/Navbar';
 import Footer from '../components/Footer/Footer';
+import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaClock, FaCheckCircle } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,8 @@ const Contact = () => {
     email: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,14 +21,22 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Form submitted successfully!');
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    setShowSuccess(true);
     setFormData({
       name: '',
       email: '',
       message: '',
     });
+    setIsSubmitting(false);
+    
+    setTimeout(() => setShowSuccess(false), 5000);
   };
 
   return (
@@ -34,118 +45,137 @@ const Contact = () => {
       
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-600/10"></div>
-        <div className="relative max-w-7xl mx-auto px-6 py-16 text-center">
-          <h1 className="text-5xl md:text-6xl font-black text-gray-900 mb-4 tracking-tight">
-            Get in Touch
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5"></div>
+        <div className="relative max-w-7xl mx-auto px-6 py-24 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Touch</span>
           </h1>
-          <p className="text-xl font-semibold text-gray-600 max-w-2xl mx-auto">
-            We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Have questions about StayFinder? We're here to help. Reach out and we'll get back to you as soon as possible.
           </p>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-6 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="max-w-7xl mx-auto px-6 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
-          {/* Contact Information Card */}
-          <div className="relative">
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
-              <div className="absolute -top-4 -left-4 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full p-4">
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                  <div className="w-4 h-4 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full"></div>
+          {/* Contact Information Cards */}
+          <div className="lg:col-span-1 space-y-6">
+            {/* Office Card */}
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+              <div className="flex items-start">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <FaMapMarkerAlt className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Visit Us</h3>
+                  <p className="mt-2 text-gray-600">123 Main Street<br />Cityville, ST 12345<br />United States</p>
                 </div>
               </div>
-              
-              <h2 className="text-3xl font-black text-gray-900 mb-8 pt-4">Contact Information</h2>
-              
-              <div className="space-y-6">
-                <div className="flex items-center p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border-l-4 border-blue-600">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mr-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-gray-500 uppercase tracking-wide">Location</p>
-                    <p className="text-lg font-bold text-gray-900">123 Main Street, Cityville</p>
+            </div>
+
+            {/* Email Card */}
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+              <div className="flex items-start">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <FaEnvelope className="w-6 h-6 text-white" />
                   </div>
                 </div>
-
-                <div className="flex items-center p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border-l-4 border-green-600">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full flex items-center justify-center mr-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-gray-500 uppercase tracking-wide">Phone</p>
-                    <p className="text-lg font-bold text-gray-900">(123) 456-7890</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border-l-4 border-purple-600">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center mr-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-gray-500 uppercase tracking-wide">Hours</p>
-                    <p className="text-lg font-bold text-gray-900">Mon-Fri, 9am - 6pm</p>
-                  </div>
+                <div className="ml-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Email Us</h3>
+                  <p className="mt-2 text-gray-600">
+                    <a href="mailto:support@stayfinder.com" className="hover:text-indigo-600 transition-colors">support@stayfinder.com</a><br />
+                    <a href="mailto:info@stayfinder.com" className="hover:text-indigo-600 transition-colors">info@stayfinder.com</a>
+                  </p>
                 </div>
               </div>
+            </div>
+
+            {/* Phone Card */}
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+              <div className="flex items-start">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <FaPhone className="w-5 h-5 text-white" />
+                  </div>
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Call Us</h3>
+                  <p className="mt-2 text-gray-600">
+                    <a href="tel:+11234567890" className="hover:text-green-600 transition-colors">+1 (123) 456-7890</a><br />
+                    <span className="text-sm">Mon-Fri 9am-6pm EST</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Response Time Card */}
+            <div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl shadow-lg p-6 text-white">
+              <div className="flex items-center mb-3">
+                <FaClock className="w-5 h-5 mr-2" />
+                <h3 className="text-lg font-semibold">Quick Response</h3>
+              </div>
+              <p className="text-blue-100">
+                We typically respond within 2-4 hours during business hours. Your satisfaction is our priority!
+              </p>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="relative">
-            <div className="absolute top-0 right-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-bl-2xl px-6 py-3 text-white shadow-lg">
-              <p className="font-black text-lg">StayFinder</p>
-            </div>
-            
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
-              <h2 className="text-3xl font-black mb-8 text-gray-900 pt-4">Send us a Message</h2>
+          <div className="lg:col-span-2">
+            <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Send us a message</h2>
+              <p className="text-gray-600 mb-8">Fill out the form below and we'll get back to you shortly.</p>
+              
+              {showSuccess && (
+                <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4 flex items-center">
+                  <FaCheckCircle className="text-green-500 mr-3" />
+                  <p className="text-green-800">Thank you! Your message has been sent successfully.</p>
+                </div>
+              )}
               
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="relative">
-                  <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border-2 border-black-200 rounded-xl shadow-sm focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 font-semibold"
-                    placeholder="Enter your full name"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Full Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-900 hover:border-gray-400"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Email Address <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-900 hover:border-gray-400"
+                      placeholder="Enter your email"
+                    />
+                  </div>
                 </div>
 
-                <div className="relative">
-                  <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 font-semibold"
-                    placeholder="Enter your email address"
-                  />
-                </div>
-
-                <div className="relative">
-                  <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
-                    Message
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Message <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -154,19 +184,39 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows="6"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200 font-semibold resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-900 resize-none hover:border-gray-400"
                     placeholder="Tell us how we can help you..."
                   ></textarea>
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full py-4 px-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-black text-lg rounded-xl shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-indigo-700 transform hover:-translate-y-1 transition-all duration-200 uppercase tracking-wide"
-                >
-                  Send Message
-                </button>
+                <div className="flex items-center justify-between pt-4">
+                  <p className="text-sm text-gray-500 flex items-center">
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                    We're online and ready to help!
+                  </p>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </span>
+                    ) : (
+                      'Send Message'
+                    )}
+                  </button>
+                </div>
               </form>
             </div>
+
+            {/* FAQ Section */}
+           
           </div>
         </div>
       </div>
