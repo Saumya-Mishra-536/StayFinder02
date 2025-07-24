@@ -43,10 +43,12 @@ function Filters({ onFilterChange }) {
           className="w-full p-3 mt-2 border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="all">All Types</option>
-          <option value="house">House</option>
-          <option value="apartment">Apartment</option>
-          <option value="condo">Condo</option>
-          <option value="townhouse">Townhouse</option>
+          <option value="house">Cozy Apartments</option>
+          <option value="apartment">Vacation Homes</option>
+          <option value="condo">City Rentals</option>
+          <option value="townhouse">Nature Escapes</option>
+          <option value="condo">Budget Friendly Stays</option>
+          <option value="townhouse">Luxury Living</option>
         </select>
       </div>
       

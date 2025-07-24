@@ -181,7 +181,7 @@ export default function PartnerPage() {
       </div>
 
       {/* Industry Cards */}
-      <h2 className="text-2xl font-semibold text-center mb-6 text-black">Select Your Industry to Get Started</h2>
+      <h2 className="text-2xl font-semibold text-center mb-6 text-black">Find Your Right Stay</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {industries.map((industry, index) => (
           <div key={index} className="border rounded-lg shadow-md overflow-hidden bg-white">
@@ -190,9 +190,7 @@ export default function PartnerPage() {
               <h3 className="text-lg font-semibold mb-2 text-black">{industry.title}</h3>
               <p className="text-black text-sm">{industry.description}</p>
               <Link href={industry.link}>
-                <span className="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer">
-                  Get started
-                </span>
+                
               </Link>
             </div>
           </div>
