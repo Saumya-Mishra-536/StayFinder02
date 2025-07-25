@@ -215,7 +215,7 @@ export default function Login() {
               <div className="text-yellow-400 text-lg">★★★★★</div>
             </div>
             <p className="text-slate-200 italic mb-4">
-              "StayFinder made finding my perfect vacation rental so easy. The process was smooth and secure!"
+              &quot;StayFinder made finding my perfect vacation rental so easy. The process was smooth and secure!&quot;
             </p>
             <div className="flex items-center">
               <div className="w-10 h-10 bg-slate-600 rounded-full mr-3"></div>

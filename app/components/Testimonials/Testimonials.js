@@ -26,7 +26,7 @@ function TestimonialList() {
               key={index}
               className="bg-white p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
             >
-              <p className="text-gray-600 text-lg italic mb-4">"{t.feedback}"</p>
+              <p className="text-gray-600 text-lg italic mb-4">&quot;{t.feedback}&quot;</p>
               <p className="text-blue-600 font-semibold">— {t.name}</p>
             </div>
           ))}

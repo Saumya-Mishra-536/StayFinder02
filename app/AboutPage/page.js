@@ -154,7 +154,7 @@ function AboutPage() {
             <h2 className="text-4xl font-bold text-slate-900 mb-6">Why Choose StayFinder</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               StayFinder combines cutting-edge technology with deep real estate expertise to deliver 
-              an unparalleled property search experience. We're not just a platform; we're your trusted 
+              an unparalleled property search experience. We&apos;re not just a platform; we&apos;re your trusted 
               partner in finding the perfect space to call home.
             </p>
           </div>
