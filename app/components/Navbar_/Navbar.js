@@ -47,11 +47,7 @@ function Navbar() {
           <li>
             <Link href="/Contact" className="text-white hover:text-yellow-400 transition-all duration-300 ease-in-out">Contact</Link>
           </li>
-          {isLoggedIn && (
-            <li>
-              <Link href="/Favourites" className="text-white hover:text-yellow-400 transition-all duration-300 ease-in-out">Favorites</Link>
-            </li>
-          )}
+          
         </ul>
       </div>
       <div>
