@@ -51,7 +51,7 @@ const Contact = () => {
             Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Touch</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Have questions about StayFinder? We're here to help. Reach out and we'll get back to you as soon as possible.
+            Have questions about StayFinder? We&#39;re here to help. Reach out and we&#39;ll get back to you as soon as possible.
           </p>
         </div>
       </div>
@@ -129,7 +129,7 @@ const Contact = () => {
           <div className="lg:col-span-2">
             <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-2">Send us a message</h2>
-              <p className="text-gray-600 mb-8">Fill out the form below and we'll get back to you shortly.</p>
+              <p className="text-gray-600 mb-8">Fill out the form below and we&#39;ll get back to you shortly.</p>
               
               {showSuccess && (
                 <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4 flex items-center">
@@ -192,7 +192,7 @@ const Contact = () => {
                 <div className="flex items-center justify-between pt-4">
                   <p className="text-sm text-gray-500 flex items-center">
                     <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-                    We're online and ready to help!
+                    We&#39;re online and ready to help!
                   </p>
                   <button
                     type="submit"

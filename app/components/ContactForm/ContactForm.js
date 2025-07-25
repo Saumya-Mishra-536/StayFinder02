@@ -40,11 +40,11 @@ function ContactForm() {
   return (
     <div className="contact-form">
       <h2>Get in Touch</h2>
-      <p>Have questions or feedback? We'd love to hear from you.</p>
+      <p>Have questions or feedback? We&#39;d love to hear from you.</p>
       
       {submitted ? (
         <div className="success-message">
-          <p>Thank you for your message! We'll get back to you soon.</p>
+          <p>Thank you for your message! We&#39;ll get back to you soon.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>

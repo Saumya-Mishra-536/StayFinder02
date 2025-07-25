@@ -31,7 +31,7 @@ function Navbar() {
   return (
     <nav className="bg-gradient-to-r from-blue-500 via-indigo-500 to-indigo-200 px-6 py-4 flex items-center justify-between shadow-lg">
       <div className="text-3xl font-semibold text-white">
-        <a href="/">StayFinder</a>
+        <Link href="/">StayFinder</Link>
       </div>
       <div className="flex-1 flex justify-center">
         <ul className="flex space-x-8 items-center">
