@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { FaSpinner, FaEye, FaEyeSlash } from 'react-icons/fa';
+import { supabase } from '../supabaseClient';
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -45,20 +46,16 @@ const SignupPage = () => {
     setError('');
 
     try {
-      const res = await fetch('/api/auth/signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-        }),
+      const { data, error: supabaseError } = await supabase.auth.signUp({
+        email: formData.email,
+        password: formData.password,
       });
-
-      if (res.ok) {
-        window.location.href = '/dashboard';
+      if (supabaseError) {
+        setError(supabaseError.message || 'Signup failed');
+      } else if (data.user) {
+        window.location.href = '/LoginPage';
       } else {
-        const data = await res.json();
-        setError(data.message || 'Signup failed');
+        setError('Signup failed');
       }
     } catch (err) {
       setError('Something went wrong. Please try again.');

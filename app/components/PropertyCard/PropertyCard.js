@@ -1,7 +1,5 @@
 'use client';
-
 import Image from 'next/image';
-
 function PropertyCard({ property, isFavorite, onToggleFavorite }) {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 duration-300">
@@ -19,10 +17,9 @@ function PropertyCard({ property, isFavorite, onToggleFavorite }) {
           <h3 className="text-lg font-semibold text-gray-800">{property.title}</h3>
         </div>
         <p className="text-sm text-gray-600 mt-1">{property.location}</p>
-        <p className="text-blue-600 font-bold mt-2">{property.price}</p>
+        <p className="text-blue-600 font-bold mt-2">{Math.round(property.price / 10)} Cr.</p>
       </div>
     </div>
   );
 }
-
 export default PropertyCard;

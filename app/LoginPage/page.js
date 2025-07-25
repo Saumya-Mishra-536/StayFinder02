@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { FaSpinner, FaEye, FaEyeSlash } from 'react-icons/fa';
+import { supabase } from '../supabaseClient';
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -29,22 +30,17 @@ export default function Login() {
     e.preventDefault();
     setIsLoading(true);
     setError('');
-    
     try {
-      const res = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          rememberMe
-        }),
+      const { data, error: supabaseError } = await supabase.auth.signInWithPassword({
+        email: formData.email,
+        password: formData.password,
       });
-
-      if (res.ok) {
-        router.push('/dashboard');
+      if (supabaseError) {
+        setError(supabaseError.message || 'Invalid email or password');
+      } else if (data.user) {
+        router.push('/HomePage');
       } else {
-        const data = await res.json();
-        setError(data.message || 'Invalid email or password');
+        setError('Invalid email or password');
       }
     } catch (error) {
       setError('Something went wrong. Please try again.');

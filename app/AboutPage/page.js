@@ -29,26 +29,79 @@ function AboutPage() {
     },
   ];
 
-  const team = [
+  const reviews = [
     {
-      name: 'Saumya Mishra',
-      role: 'Founder & CEO',
-      desc: 'Visionary leader with 10+ years in proptech, driving innovation and strategic growth.',
-      image: '/assets/radiance-the-prime.jpg',
+      name: 'Sarah Johnson',
+      location: 'San Francisco, CA',
+      rating: 5,
+      date: 'January 2025',
+      review: 'StayFinder made my home search incredibly easy. The filters helped me find exactly what I was looking for, and I closed on my dream condo within 3 weeks!',
+      propertyType: 'Condo Buyer',
+      image: '/assets/user1.jpg'
     },
     {
-      name: 'Ankit Verma',
-      role: 'Chief Technology Officer',
-      desc: 'Tech innovator ensuring scalable solutions and exceptional user experiences.',
-      image: '/assets/radiance-the-prime.jpg',
+      name: 'Michael Chen',
+      location: 'Austin, TX',
+      rating: 5,
+      date: 'December 2024',
+      review: 'As a first-time homebuyer, I was overwhelmed. StayFinder\'s intuitive interface and detailed property information made the process stress-free. Highly recommend!',
+      propertyType: 'First-time Buyer',
+      image: '/assets/user2.jpg'
     },
     {
-      name: 'Ritika Shah',
-      role: 'Head of Design',
-      desc: 'Creative force behind our intuitive interface and user-centered design approach.',
-      image: '/assets/radiance-the-prime.jpg',
+      name: 'Emily Rodriguez',
+      location: 'Miami, FL',
+      rating: 4,
+      date: 'January 2025',
+      review: 'Great platform with extensive listings. Found my vacation rental property quickly. The only improvement would be more virtual tour options, but overall excellent!',
+      propertyType: 'Investment Property',
+      image: '/assets/user3.jpg'
     },
+    {
+      name: 'David Thompson',
+      location: 'Seattle, WA',
+      rating: 5,
+      date: 'November 2024',
+      review: 'The neighborhood insights and school ratings were game-changers for our family. We found the perfect home in a great school district thanks to StayFinder.',
+      propertyType: 'Family Home',
+      image: '/assets/user4.jpg'
+    },
+    {
+      name: 'Lisa Patel',
+      location: 'Chicago, IL',
+      rating: 5,
+      date: 'December 2024',
+      review: 'Exceptional service! The saved searches feature kept me updated on new listings. Found my downtown loft in just 2 weeks. The process was seamless.',
+      propertyType: 'Urban Living',
+      image: '/assets/user5.jpg'
+    },
+    {
+      name: 'Robert Martinez',
+      location: 'Denver, CO',
+      rating: 4,
+      date: 'October 2024',
+      review: 'StayFinder helped me relocate across the country. The detailed photos and neighborhood info made it possible to buy confidently without multiple visits.',
+      propertyType: 'Relocation',
+      image: '/assets/user6.jpg'
+    }
   ];
+
+  const renderStars = (rating) => {
+    return (
+      <div className="flex items-center">
+        {[...Array(5)].map((_, index) => (
+          <svg
+            key={index}
+            className={`w-5 h-5 ${index < rating ? 'text-yellow-400' : 'text-gray-300'}`}
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        ))}
+      </div>
+    );
+  };
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -119,35 +172,54 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Reviews Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Leadership Team</h2>
-            <p className="text-xl text-gray-600">Meet the visionaries behind StayFinder</p>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">What Our Customers Say</h2>
+            <p className="text-xl text-gray-600">Real experiences from real people finding their perfect homes</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, idx) => (
-              <div key={idx} className="group">
-                <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                  <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {reviews.map((review, idx) => (
+              <div key={idx} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                      {review.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900">{review.name}</h4>
+                      <p className="text-sm text-gray-500">{review.location}</p>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <h4 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h4>
-                    <p className="text-indigo-600 font-medium mb-3">{member.role}</p>
-                    <p className="text-gray-600 text-sm leading-relaxed">{member.desc}</p>
-                  </div>
+                </div>
+                
+                <div className="flex items-center justify-between mb-3">
+                  {renderStars(review.rating)}
+                  <span className="text-sm text-gray-500">{review.date}</span>
+                </div>
+                
+                <p className="text-gray-700 mb-3 leading-relaxed">{review.review}</p>
+                
+                <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                  <span className="text-sm font-medium text-indigo-600">{review.propertyType}</span>
+                  <span className="text-sm text-gray-500">Verified Buyer</span>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Review Summary */}
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center space-x-2 bg-white px-6 py-3 rounded-full shadow-md">
+              <div className="flex items-center">
+                {renderStars(5)}
+              </div>
+              <span className="font-semibold text-slate-900">4.8 out of 5</span>
+              <span className="text-gray-500">|</span>
+              <span className="text-gray-600">Based on 500K+ reviews</span>
+            </div>
           </div>
         </div>
       </section>
@@ -161,9 +233,7 @@ function AboutPage() {
           <p className="text-xl text-indigo-100 mb-8">
             Join millions who trust StayFinder for their property search journey
           </p>
-          <button className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg">
-            Start Exploring Now
-          </button>
+          
         </div>
       </section>
 

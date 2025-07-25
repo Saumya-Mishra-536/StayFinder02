@@ -1,248 +1,227 @@
-// 'use client';
-// import React from 'react';
-// import Image from 'next/image';
-// import Link from 'next/link';
-// import Filters from '../components/Filter/Filter';
-// import Navbar from '../components/Navbar_/Navbar';
-// import Footer from '../components/Footer/Footer';
-
-// export default function PartnerPage() {
- 
-//   const industries = [
-//     {
-//       title: "I'm a Hotel or Resort",
-//       image: '/assets/radiance-the-prime.jpg',
-//       link: '/partner/hotel'
-//     },
-//     {
-//       title: "I'm a Vacation Rental Owner or Manager",
-//       image: '/assets/radiance-the-prime.jpg',
-//       link: '/partner/rental'
-//     },
-//     {
-//       title: "I'm a Bed & Breakfast or Inn Owner",
-//       image: '/assets/radiance-the-prime.jpg',
-//       link: '/partner/inn'
-//     },
-//     {
-//       title: "I'm a Property Management Company",
-//       image: '/assets/radiance-the-prime.jpg',
-//       link: '/partner/property-management'
-//     },
-//     {
-//       title: "I'm a Local Experience Provider",
-//       image: '/assets/radiance-the-prime.jpg',
-//       link: '/partner/experience'
-//     },
-//     {
-//       title: "I am a Travel Brand or Local Business",
-//       image: '/assets/radiance-the-prime.jpg',
-//       link: '/partner/travel-brand'
-//     },
-//   ];
-
-//   return (
-//     <div className="bg-white w-full">
-//         <Navbar/>
-//       <h1 className="text-4xl font-bold text-center mb-2 mt-8 text-black">Partner with StayFinder to Grow Your Business</h1>
-//       <p className="text-center text-black mb-8">
-//         Reach millions of travelers and guests on the leading accommodation network online.
-//       </p>
-//       <Filters/>
-//       <h2 className="text-xl font-semibold text-center mb-4 text-black">Select your industry to get started</h2>
-//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-//         {industries.map((industry, index) => (
-//           <div key={index} className="border rounded-lg shadow-md overflow-hidden bg-white">
-//             <Image src={industry.image} alt={industry.title} width={600} height={400} className="object-cover w-full h-48" />
-//             <div className="p-4">
-//               <h3 className="text-lg font-semibold mb-2 text-black">{industry.title}</h3>
-//               <Link href={industry.link}>
-//                 <span className="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer">
-//                   Get started
-//                 </span>
-//               </Link>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-
-//       <div className="mt-16 max-w-4xl mx-auto text-center">
-//         <h2 className="text-2xl font-bold mb-4 text-black">Why Partner with StayFinder?</h2>
-//         <ul className="text-black space-y-2 text-left mx-auto w-fit">
-//           <li>• Reach a vast and engaged travel audience.</li>
-//           <li>• Showcase your properties or services effectively.</li>
-//           <li>• Drive more bookings and inquiries.</li>
-//           <li>• Access powerful marketing and analytics tools.</li>
-//         </ul>
-//       </div>
-
-//       <div className="mt-16 max-w-4xl mx-auto text-center">
-//         <h2 className="text-xl font-semibold mb-4 text-black">Learn More or Contact Us</h2>
-//         <p className="text-black mb-2">For more details or questions, feel free to <Link href="/Contact" className="text-blue-600 underline">contact us</Link>.</p>
-//       </div>
-//       <Footer/>
-//     </div>
-//   );
-// }
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Filters from '../components/Filter/Filter';
 import Navbar from '../components/Navbar_/Navbar';
 import Footer from '../components/Footer/Footer';
+import PropertyCard from '../components/PropertyCard/PropertyCard';
+import mockProperties from './mockProperties';
 
-export default function PartnerPage() {
-  const industries = [
+const PROPERTY_TYPES = [
+  'Cozy Apartments',
+  'Vacation Homes',
+  'City Rentals',
+  'Nature Escapes',
+  'Budget Friendly Stays',
+  'Luxury Living',
+];
+
+export default function ExplorePage() {
+  const [search, setSearch] = useState('');
+  const [filters, setFilters] = useState({
+    propertyType: 'all',
+    minPrice: 0,
+    maxPrice: 1500,
+    bedrooms: 'any',
+    bathrooms: 'any',
+  });
+  const [filteredProperties, setFilteredProperties] = useState(mockProperties);
+  const [showFilters, setShowFilters] = useState(false);
+
+  useEffect(() => {
+    let filtered = mockProperties.filter((property) => {
+      const typeMatch =
+        filters.propertyType === 'all' ||
+        property.type === filters.propertyType ||
+        property.type.replace(/\s+/g, '').toLowerCase() === filters.propertyType.replace(/\s+/g, '').toLowerCase();
+      
+      const minPriceMatch =
+        !filters.minPrice || property.price >= parseInt(filters.minPrice) * 1000;
+      const maxPriceMatch =
+        !filters.maxPrice || property.price <= parseInt(filters.maxPrice) * 1000;
+      
+      const bedroomsMatch =
+        filters.bedrooms === 'any' || property.bedrooms >= parseInt(filters.bedrooms);
+      
+      const bathroomsMatch =
+        filters.bathrooms === 'any' || property.bathrooms >= parseInt(filters.bathrooms);
+      
+      const searchMatch =
+        property.title.toLowerCase().includes(search.toLowerCase()) ||
+        property.location.toLowerCase().includes(search.toLowerCase()) ||
+        property.description.toLowerCase().includes(search.toLowerCase());
+
+      return (
+        typeMatch &&
+        minPriceMatch &&
+        maxPriceMatch &&
+        bedroomsMatch &&
+        bathroomsMatch &&
+        searchMatch
+      );
+    });
+    setFilteredProperties(filtered);
+  }, [search, filters]);
+
+  const handleFilterChange = (newFilters) => {
+    setFilters(newFilters);
+  };
+
+  const groupedProperties = PROPERTY_TYPES.map((type) => ({
+    type,
+    properties: filteredProperties.filter((p) => p.type === type),
+  }));
+
+  const featuredAmenities = [
     {
-      title: "Cozy Apartments",
-      image:'/assets/cozy apartment.png',
-      link: '/explore/apartments'
+      icon: '🏊',
+      title: 'Premium Amenities',
+      description: 'Swimming pools, gyms, and recreational facilities'
     },
     {
-      title: "Vacation Homes",
-      image: '/assets/vacation homes.png',
-      link: '/explore/vacation-homes'
+      icon: '🚗',
+      title: 'Convenient Parking',
+      description: 'Dedicated parking spaces for residents and guests'
     },
     {
-      title: "City Rentals",
-      image: '/assets/rentals.png',
-      link: '/explore/city-rentals'
+      icon: '🌳',
+      title: 'Green Spaces',
+      description: 'Landscaped gardens and outdoor relaxation areas'
     },
     {
-      title: "Nature Escapes",
-      image: '/assets/nature escapes.png',
-      link: '/explore/nature-escapes'
-    },
-    {
-      title: "Budget Friendly Stays",
-      image: '/assets/budget friendly.png',
-      link: '/explore/budget-stays'
-    },
-    {
-      title: "Luxury Living",
-      image: '/assets/luxury living.png',
-      link: '/explore/luxury'
-    },
+      icon: '🔒',
+      title: '24/7 Security',
+      description: 'Round-the-clock security with CCTV surveillance'
+    }
   ];
-  
 
   return (
-    <div className="bg-white w-full" style={{ fontFamily: `'Times New Roman', serif` }}>
+    <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 min-h-screen w-full font-sans">
       <Navbar />
-      <h1
-  className="text-4xl font-extrabold text-center mb-2 mt-8"
-  style={{
-    fontFamily: `'Times New Roman', serif`,
-    color: '#1A1A1A', // Dark charcoal (almost black)
-    letterSpacing: '0.5px',
-  }}
->
-  Your Journey to the Perfect Home Begins Here
-</h1>
-<p
-  className="text-center mb-8 text-lg"
-  style={{
-    fontFamily: `'Times New Roman', serif`,
-    fontWeight: '500',
-    color: '#333333', // Very dark gray for clean contrast
-  }}
->
-  Explore personalized options tailored to your lifestyle and preferences.
-</p>
-
-
-      {/* Enhanced Filter Section */}
-      <div className="max-w-5xl mx-auto mb-10">
-        <div className="bg-blue-50 p-6 rounded-lg shadow-md">
-        <h2
-  className="text-3xl font-extrabold text-center mb-4 text-black"
-  style={{
-    fontFamily: `'Times New Roman', Times, serif`,
-    letterSpacing: '0.5px',
-  }}
->
-  Find Your Perfect Home
-</h2>
-
-<p
-  className="text-lg text-center text-black mb-6"
-  style={{
-    fontFamily: `'Segoe UI', Tahoma, Geneva, Verdana, sans-serif`,
-    fontWeight: '600',
-    lineHeight: '1.6',
-  }}
->
-  Start by choosing what matters to you — we’ll show you the best options.
-</p>
-
-          <Filters />
+      
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16">
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl font-extrabold mb-4 tracking-tight">
+            Discover Your Dream Property
+          </h1>
+          <p className="text-xl font-light max-w-2xl mx-auto">
+            Explore our exclusive collection of premium properties across India
+          </p>
         </div>
       </div>
 
-      {/* Industry Cards */}
-      <h2 className="text-2xl font-semibold text-center mb-6 text-black">Find Your Right Stay</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {industries.map((industry, index) => (
-          <div key={index} className="border rounded-lg shadow-md overflow-hidden bg-white">
-            <Image src={industry.image} alt={industry.title} width={600} height={400} className="object-cover w-full h-48" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold mb-2 text-black">{industry.title}</h3>
-              <p className="text-black text-sm">{industry.description}</p>
-              <Link href={industry.link}>
-                
-              </Link>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+        {/* Price Range Display */}
+        <div className="bg-white rounded-xl shadow-md p-6 mb-8 text-center">
+          <h3 className="text-lg font-semibold text-gray-700 mb-2">Property Price Range</h3>
+          <div className="flex justify-center items-center space-x-8">
+            <div className="text-center">
+              <p className="text-sm text-gray-500">Starting from</p>
+              <p className="text-2xl font-bold text-blue-600">₹0.5 Cr</p>
+            </div>
+            <div className="text-gray-300">|</div>
+            <div className="text-center">
+              <p className="text-sm text-gray-500">Up to</p>
+              <p className="text-2xl font-bold text-indigo-600">₹50 Cr+</p>
             </div>
           </div>
-        ))}
+        </div>
+
+        {/* Responsive Filter/Search Layout */}
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Sidebar/Drawer for Filters */}
+          <div className="md:w-1/4 w-full">
+            <div className="block md:hidden mb-4">
+              <button
+                className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-indigo-700 transition duration-300 shadow-lg"
+                onClick={() => setShowFilters((v) => !v)}
+              >
+                {showFilters ? 'Hide Filters' : 'Show Filters'}
+              </button>
+            </div>
+            <div className={`bg-white rounded-xl shadow-lg p-6 md:block ${showFilters ? 'block' : 'hidden'} md:sticky md:top-24`}>
+              <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                <span className="mr-2">🔍</span> Search & Filter
+              </h3>
+              <input
+                type="text"
+                placeholder="Search properties..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full p-3 mb-4 border-2 border-gray-200 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+              />
+              <Filters onFilterChange={handleFilterChange} />
+            </div>
+          </div>
+
+          {/* Main Content: Grouped Properties */}
+          <div className="flex-1">
+            {groupedProperties.map(({ type, properties }) => (
+              <div key={type} className="mb-12">
+                <div className="flex items-center mb-6">
+                  <h2 className="text-3xl font-bold text-gray-800">{type}</h2>
+                  <span className="ml-3 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                    {properties.length} properties
+                  </span>
+                </div>
+                
+                {properties.length === 0 ? (
+                  <div className="bg-gray-100 rounded-lg p-8 text-center">
+                    <p className="text-gray-500">No properties found in this category.</p>
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {properties.map((property) => (
+                      <PropertyCard key={property.id} property={property} />
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            
+            {filteredProperties.length === 0 && (
+              <div className="bg-white rounded-xl shadow-md p-12 text-center">
+                <div className="text-6xl mb-4">🏠</div>
+                <h3 className="text-2xl font-bold text-gray-700 mb-2">No properties found</h3>
+                <p className="text-gray-500">Try adjusting your filters or search criteria</p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Featured Amenities Section */}
+        <div className="mt-20 py-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl shadow-2xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">World-Class Amenities</h2>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+              Every property comes with premium facilities for modern living
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-8">
+            {featuredAmenities.map((amenity, index) => (
+              <div key={index} className="bg-white/10 backdrop-blur-lg rounded-xl p-6 text-center hover:bg-white/20 transition duration-300">
+                <div className="text-5xl mb-4">{amenity.icon}</div>
+                <h3 className="text-xl font-bold text-white mb-2">{amenity.title}</h3>
+                <p className="text-blue-100">{amenity.description}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link href="/AboutPage">
+              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition duration-300 shadow-lg">
+                Learn More About Us
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
-
-      {/* New Section: What Makes Us Unique */}
-      <div className="mt-16 max-w-5xl mx-auto text-center px-4">
-  <h2
-    className="text-2xl font-bold mb-4"
-    style={{
-      fontFamily: `'Georgia', serif`,
-      color: '#1A1A1A',
-    }}
-  >
-    Why Choose StayFinder?
-  </h2>
-  <p
-    className="mb-6"
-    style={{
-      fontFamily: `'Georgia', serif`,
-      color: '#333333',
-      fontSize: '1rem',
-    }}
-  >
-    Simple, smart, and made for you — discover homes tailored to your needs with ease and trust.
-  </p>
-  <div
-    className="grid sm:grid-cols-2 gap-6 text-left"
-    style={{
-      fontFamily: `'Georgia', serif`,
-      color: '#333333',
-    }}
-  >
-    <div>• Personalized home recommendations</div>
-    <div>• Verified listings you can trust</div>
-    <div>• Easy search filters to narrow down options</div>
-    <div>• Friendly support to guide your journey</div>
-  </div>
-</div>
-
-
-      {/* Contact Section */}
-      <div className="mt-16 max-w-4xl mx-auto text-center">
-        <h2 className="text-xl font-semibold mb-4 text-black">Learn More or Contact Us</h2>
-        <p className="text-black mb-2">
-          Have questions? We're here to help. <Link href="/Contact" className="text-blue-600 underline">Reach out to our team.</Link>
-        </p>
-      </div>
-
+      
       <Footer />
     </div>
   );
 }
-

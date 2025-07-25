@@ -1,9 +1,32 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { supabase } from '../../supabaseClient';
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Check initial session
+    const checkSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      setIsLoggedIn(!!session);
+    };
+    checkSession();
+    // Listen for auth changes
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsLoggedIn(!!session);
+    });
+    return () => {
+      listener.subscription.unsubscribe();
+    };
+  }, []);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setIsLoggedIn(false);
+    window.location.href = '/';
+  };
 
   return (
     <nav className="bg-gradient-to-r from-blue-500 via-indigo-500 to-indigo-200 px-6 py-4 flex items-center justify-between shadow-lg">
@@ -34,7 +57,7 @@ function Navbar() {
       <div>
         {isLoggedIn ? (
           <button
-            onClick={() => setIsLoggedIn(false)}
+            onClick={handleLogout}
             className="ml-4 px-6 py-2 bg-transparent border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition duration-300"
           >
             Logout
