@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 function Carousel({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,10 +23,12 @@ function Carousel({ images }) {
   return (
     <div className="carousel">
       <div className="carousel-container">
-        <img 
+        <Image 
           src={images[currentIndex]} 
           alt={`Property image ${currentIndex + 1}`} 
           className="carousel-image"
+          width={500}
+          height={300}
         />
         
         <button className="carousel-button prev" onClick={handlePrev}>❮</button>
@@ -44,12 +47,15 @@ function Carousel({ images }) {
       
       <div className="carousel-thumbnails">
         {images.map((image, index) => (
-          <img 
+          <Image 
             key={index}
             src={image} 
             alt={`Thumbnail ${index + 1}`}
             className={`thumbnail ${index === currentIndex ? 'active' : ''}`}
+            width={100}
+            height={60}
             onClick={() => setCurrentIndex(index)}
+            style={{ cursor: 'pointer' }}
           />
         ))}
       </div>
