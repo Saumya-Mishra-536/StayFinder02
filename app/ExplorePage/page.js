@@ -185,7 +185,7 @@ export default function ExplorePage() {
             {filteredProperties.length === 0 && (
               <div className="bg-white rounded-xl shadow-md p-12 text-center">
                 <div className="text-6xl mb-4">🏠</div>
-                <h3 className="text-2xl font-bold text-gray-700 mb-2">No properties found</h3>
+                {/* <h3 className="text-2xl font-bold text-gray-700 mb-2">No properties found</h3> */}
                 <p className="text-gray-500">Try adjusting your filters or search criteria</p>
               </div>
             )}

@@ -7,7 +7,7 @@ const mockProperties = [
       price: 180,
       bedrooms: 1,
       bathrooms: 1,
-      imageUrl: '/assets/cozy downtown.png',
+      imageUrl: 'https://www.zillowstatic.com/bedrock/app/uploads/sites/5/2024/10/2017_ZillowExteriors_218-1.jpg',
       description: 'A bright, modern loft in the heart of the city.'
     },
     {
@@ -18,7 +18,7 @@ const mockProperties = [
       price: 150,
       bedrooms: 2,
       bathrooms: 1,
-      imageUrl: '/assets/cozy apartment.png',
+      imageUrl: 'https://www.zillowstatic.com/bedrock/app/uploads/sites/5/2024/10/GettyImages-472069091-Edit.jpg',
       description: 'A comfortable apartment perfect for couples or small families.'
     },
     {
@@ -29,7 +29,7 @@ const mockProperties = [
       price: 500,
       bedrooms: 3,
       bathrooms: 2,
-      imageUrl: '/assets/luxury living.png',
+      imageUrl: 'https://www.zillowstatic.com/bedrock/app/uploads/sites/5/2024/10/shutterstock_529108441.jpg',
       description: 'Experience the high life in this stunning penthouse with ocean views.'
     },
     {
@@ -40,7 +40,7 @@ const mockProperties = [
       price: 80,
       bedrooms: 1,
       bathrooms: 1,
-      imageUrl: '/assets/budget friendly.png',
+      imageUrl: 'https://img.staticmb.com/mbphoto/property/cropped_images/2025/Apr/15/Photo_h180_w240/78945585_1_PropertyImage793-1130782880522_180_240.jpg',
       description: 'Affordable and convenient studio for solo travelers.'
     },
     {
@@ -51,7 +51,7 @@ const mockProperties = [
       price: 220,
       bedrooms: 2,
       bathrooms: 2,
-      imageUrl: '/assets/nature escapes.png',
+      imageUrl: 'https://cdn.staticmb.com/magicservicestatic/images/revamp/mbhome-web/property-services/graphic-home-decor.jpg',
       description: 'A peaceful cabin surrounded by nature, perfect for relaxation.'
     },
     {
@@ -62,8 +62,8 @@ const mockProperties = [
       price: 300,
       bedrooms: 4,
       bathrooms: 3,
-      imageUrl: '/assets/vacation homes.png',
-      description: 'Spacious home with a pool, ideal for family getaways.'
+      imageUrl: 'https://static.squareyards.com/resources/images/bangalore/tn-projectflagship/tn-godrej-lakeside-orchard-project-flagship.jpg?aio=w-360;h-304;crop;',
+      description: 'Spacious home with a pool, ideahttpsl for family getaways.'
     },
     {
       id: 7,
@@ -73,7 +73,7 @@ const mockProperties = [
       price: 90,
       bedrooms: 1,
       bathrooms: 1,
-      imageUrl: '/assets/budget friendly.png',
+      imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638885170922771059-1907251018121812.jpeg?aio=w-360;h-225;crop;',
       description: 'Simple, clean, and close to public transport.'
     },
     {
@@ -84,7 +84,7 @@ const mockProperties = [
       price: 200,
       bedrooms: 3,
       bathrooms: 2,
-      imageUrl: '/assets/nature escapes.png',
+      imageUrl: 'https://static.squareyards.com/resources/images/bangalore/tn-projectflagship/tn-embassy-verde-project-flagship.jpg?aio=w-360;h-304;crop;',
       description: 'Enjoy mountain views and fresh air in this cozy retreat.'
     },
     {
@@ -95,7 +95,7 @@ const mockProperties = [
       price: 170,
       bedrooms: 2,
       bathrooms: 1,
-      imageUrl: '/assets/cozy apartment.png',
+      imageUrl: 'https://images.unsplash.com/photo-1522444195799-478538b28823?w=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 100w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 200w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 300w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 400w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 500w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 600w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 700w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 800w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 900w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 1000w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 1200w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 1400w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=1600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 1600w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=1800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 1800w, https://images.unsplash.com/photo-1522444195799-478538b28823?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 2000w',
       description: 'Elegant apartment with easy access to city attractions.'
     },
     {
@@ -106,7 +106,7 @@ const mockProperties = [
       price: 700,
       bedrooms: 5,
       bathrooms: 4,
-      imageUrl: '/assets/luxury living.png',
+      imageUrl: 'https://images.unsplash.com/photo-1618220179428-22790b461013?w=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 100w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 200w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 300w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 400w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 500w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 600w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 700w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 800w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 900w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 1000w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 1200w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 1400w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=1600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 1600w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=1800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 1800w, https://images.unsplash.com/photo-1618220179428-22790b461013?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbWV8ZW58MHx8MHx8fDA%3D 2000w',
       description: 'A stunning villa right on the beach with premium amenities.'
     },
     {
@@ -117,7 +117,7 @@ const mockProperties = [
       price: 120,
       bedrooms: 1,
       bathrooms: 1,
-      imageUrl: '/assets/cozy downtown.png',
+      imageUrl: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 100w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 200w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 300w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 400w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 500w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 600w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 700w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 800w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 900w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 1000w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 1200w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 1400w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 1600w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 1800w, https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHx8MA%3D%3D 2000w',
       description: 'Compact studio in the heart of downtown.'
     },
     {
@@ -128,7 +128,7 @@ const mockProperties = [
       price: 140,
       bedrooms: 1,
       bathrooms: 1,
-      imageUrl: '/assets/cozy apartment.png',
+      imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638884626065100878-180725071006106.jpg?aio=w-360;h-225;crop;',
       description: 'Stylish apartment with modern amenities.'
     },
     {
@@ -139,7 +139,7 @@ const mockProperties = [
       price: 450,
       bedrooms: 2,
       bathrooms: 2,
-      imageUrl: '/assets/luxury living.png',
+      imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638889595060727623-2407250111461146.png?aio=w-360;h-225;crop;',
       description: 'High-rise condo with city views.'
     },
     {
@@ -150,295 +150,296 @@ const mockProperties = [
       price: 60,
       bedrooms: 1,
       bathrooms: 1,
-      imageUrl: '/assets/budget friendly.png',
+      imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638823161139071971-0805250348334833.jpeg?aio=w-360;h-225;crop;',
       description: 'Perfect for budget travelers.'
     },
     {
-      id: 15,
-      title: 'Forest Hideaway',
-      type: 'Nature Escapes',
-      location: 'Asheville, NC',
-      price: 180,
-      bedrooms: 2,
-      bathrooms: 1,
-      imageUrl: '/assets/nature escapes.png',
-      description: 'Secluded cabin in the woods.'
-    },
-    {
-      id: 16,
-      title: 'Disney Family Home',
-      type: 'Vacation Homes',
-      location: 'Kissimmee, FL',
-      price: 320,
-      bedrooms: 5,
-      bathrooms: 4,
-      imageUrl: '/assets/vacation homes.png',
-      description: 'Minutes from Disney parks.'
-    },
-    {
-      id: 17,
-      title: 'Budget City Room',
-      type: 'Budget Friendly Stays',
-      location: 'Philadelphia, PA',
-      price: 70,
-      bedrooms: 1,
-      bathrooms: 1,
-      imageUrl: '/assets/budget friendly.png',
-      description: 'Affordable room in the city.'
-    },
-    {
-      id: 18,
-      title: 'Lakeview Nature Lodge',
-      type: 'Nature Escapes',
-      location: 'Lake Placid, NY',
-      price: 210,
-      bedrooms: 3,
-      bathrooms: 2,
-      imageUrl: '/assets/nature escapes.png',
-      description: 'Lodge with lake views.'
-    },
-    {
-      id: 19,
-      title: 'Modern City Flat',
-      type: 'City Rentals',
-      location: 'London, UK',
-      price: 220,
-      bedrooms: 2,
-      bathrooms: 1,
-      imageUrl: '/assets/cozy downtown.png',
-      description: 'Modern flat in central London.'
-    },
-    {
-      id: 20,
-      title: 'Parisian Apartment',
-      type: 'Cozy Apartments',
-      location: 'Paris, France',
-      price: 210,
-      bedrooms: 1,
-      bathrooms: 1,
-      imageUrl: '/assets/cozy apartment.png',
-      description: 'Charming apartment in Paris.'
-    },
-    {
-      id: 21,
-      title: 'Luxury Beach Condo',
-      type: 'Luxury Living',
-      location: 'Gold Coast, Australia',
-      price: 600,
-      bedrooms: 4,
-      bathrooms: 3,
-      imageUrl: '/assets/luxury living.png',
-      description: 'Beachfront luxury condo.'
-    },
-    {
-      id: 22,
-      title: 'Budget Hostel Room',
-      type: 'Budget Friendly Stays',
-      location: 'Berlin, Germany',
-      price: 50,
-      bedrooms: 1,
-      bathrooms: 1,
-      imageUrl: '/assets/budget friendly.png',
-      description: 'Simple hostel room.'
-    },
-    {
-      id: 23,
-      title: 'Mountain Escape',
-      type: 'Nature Escapes',
-      location: 'Zermatt, Switzerland',
-      price: 350,
-      bedrooms: 3,
-      bathrooms: 2,
-      imageUrl: '/assets/nature escapes.png',
-      description: 'Chalet with mountain views.'
-    },
-    {
-      id: 24,
-      title: 'Orlando Resort Home',
-      type: 'Vacation Homes',
-      location: 'Orlando, FL',
-      price: 330,
-      bedrooms: 4,
-      bathrooms: 3,
-      imageUrl: '/assets/vacation homes.png',
-      description: 'Resort-style vacation home.'
-    },
-    {
-      id: 25,
-      title: 'Budget Guesthouse',
-      type: 'Budget Friendly Stays',
-      location: 'Bangkok, Thailand',
-      price: 40,
-      bedrooms: 1,
-      bathrooms: 1,
-      imageUrl: '/assets/budget friendly.png',
-      description: 'Affordable guesthouse.'
-    },
-    {
-      id: 26,
-      title: 'Jungle Nature Retreat',
-      type: 'Nature Escapes',
-      location: 'Ubud, Bali',
-      price: 250,
-      bedrooms: 2,
-      bathrooms: 2,
-      imageUrl: '/assets/nature escapes.png',
-      description: 'Retreat in the jungle.'
-    },
-    {
-      id: 27,
-      title: 'Tokyo City Studio',
-      type: 'City Rentals',
-      location: 'Tokyo, Japan',
-      price: 160,
-      bedrooms: 1,
-      bathrooms: 1,
-      imageUrl: '/assets/cozy downtown.png',
-      description: 'Studio in central Tokyo.'
-    },
-    {
-      id: 28,
-      title: 'Barcelona Apartment',
-      type: 'Cozy Apartments',
-      location: 'Barcelona, Spain',
-      price: 180,
-      bedrooms: 2,
-      bathrooms: 1,
-      imageUrl: '/assets/cozy apartment.png',
-      description: 'Sunny apartment in Barcelona.'
-    },
-    {
-      id: 29,
-      title: 'Luxury Lake Villa',
-      type: 'Luxury Living',
-      location: 'Como, Italy',
-      price: 800,
-      bedrooms: 6,
-      bathrooms: 5,
-      imageUrl: '/assets/luxury living.png',
-      description: 'Villa on Lake Como.'
-    },
-    {
-      id: 30,
-      title: 'Budget Capsule',
-      type: 'Budget Friendly Stays',
-      location: 'Tokyo, Japan',
-      price: 35,
-      bedrooms: 1,
-      bathrooms: 1,
-      imageUrl: '/assets/budget friendly.png',
-      description: 'Capsule hotel experience.'
-    },
-    {
-      id: 31,
-      title: 'Rainforest Nature Home',
-      type: 'Nature Escapes',
-      location: 'Amazonas, Brazil',
-      price: 270,
-      bedrooms: 3,
-      bathrooms: 2,
-      imageUrl: '/assets/nature escapes.png',
-      description: 'Home in the rainforest.'
-    },
-    {
-      id: 32,
-      title: 'Disney Villa',
-      type: 'Vacation Homes',
-      location: 'Anaheim, CA',
-      price: 340,
-      bedrooms: 5,
-      bathrooms: 4,
-      imageUrl: '/assets/vacation homes.png',
-      description: 'Villa near Disneyland.'
-    },
-    {
-      id: 33,
-      title: 'Budget Beach Hut',
-      type: 'Budget Friendly Stays',
-      location: 'Goa, India',
-      price: 55,
-      bedrooms: 1,
-      bathrooms: 1,
-      imageUrl: '/assets/budget friendly.png',
-      description: 'Beach hut for budget travelers.'
-    },
-    {
-      id: 34,
-      title: 'Safari Nature Lodge',
-      type: 'Nature Escapes',
-      location: 'Nairobi, Kenya',
-      price: 260,
-      bedrooms: 2,
-      bathrooms: 2,
-      imageUrl: '/assets/nature escapes.png',
-      description: 'Lodge near safari parks.'
-    },
-    {
-      id: 35,
-      title: 'Sydney City Apartment',
-      type: 'City Rentals',
-      location: 'Sydney, Australia',
-      price: 210,
-      bedrooms: 2,
-      bathrooms: 2,
-      imageUrl: '/assets/cozy downtown.png',
-      description: 'Apartment in downtown Sydney.'
-    },
-    {
-      id: 36,
-      title: 'Vienna Cozy Flat',
-      type: 'Cozy Apartments',
-      location: 'Vienna, Austria',
-      price: 160,
-      bedrooms: 1,
-      bathrooms: 1,
-      imageUrl: '/assets/cozy apartment.png',
-      description: 'Cozy flat in Vienna.'
-    },
-    {
-      id: 37,
-      title: 'Luxury Palace Suite',
-      type: 'Luxury Living',
-      location: 'Dubai, UAE',
-      price: 1200,
-      bedrooms: 7,
-      bathrooms: 6,
-      imageUrl: '/assets/luxury living.png',
-      description: 'Palace suite with luxury amenities.'
-    },
-    {
-      id: 38,
-      title: 'Budget Downtown Room',
-      type: 'Budget Friendly Stays',
-      location: 'Toronto, Canada',
-      price: 75,
-      bedrooms: 1,
-      bathrooms: 1,
-      imageUrl: '/assets/budget friendly.png',
-      description: 'Affordable room in downtown Toronto.'
-    },
-    {
-      id: 39,
-      title: 'Alpine Nature Chalet',
-      type: 'Nature Escapes',
-      location: 'Innsbruck, Austria',
-      price: 230,
-      bedrooms: 3,
-      bathrooms: 2,
-      imageUrl: '/assets/nature escapes.png',
-      description: 'Chalet in the Alps.'
-    },
-    {
-      id: 40,
-      title: 'Orlando Family Resort',
-      type: 'Vacation Homes',
-      location: 'Orlando, FL',
-      price: 310,
-      bedrooms: 4,
-      bathrooms: 3,
-      imageUrl: '/assets/vacation homes.png',
-      description: 'Family-friendly resort home.'
-    },
-  ];
-  export default mockProperties;
+        id: 15,
+        title: 'Forest Hideaway',
+        type: 'Nature Escapes',
+        location: 'Asheville, NC',
+        price: 180,
+        bedrooms: 2,
+        bathrooms: 1,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638802307161921894-1404251231563156.jpeg?aio=w-360;h-225;crop;',
+        description: 'Secluded cabin in the woods.'
+      },
+      {
+        id: 16,
+        title: 'Disney Family Home',
+        type: 'Vacation Homes',
+        location: 'Kissimmee, FL',
+        price: 320,
+        bedrooms: 5,
+        bathrooms: 4,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638810898207722800-2404251110201020.jpeg?aio=w-360;h-225;crop;',
+        description: 'Minutes from Disney parks.'
+      },
+      {
+        id: 17,
+        title: 'Budget City Room',
+        type: 'Budget Friendly Stays',
+        location: 'Philadelphia, PA',
+        price: 70,
+        bedrooms: 1,
+        bathrooms: 1,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638889560145210776-2407251213341334.jpg?aio=w-360;h-225;crop;',
+        description: 'Affordable room in the city.'
+      },
+      {
+        id: 18,
+        title: 'Lakeview Nature Lodge',
+        type: 'Nature Escapes',
+        location: 'Lake Placid, NY',
+        price: 210,
+        bedrooms: 3,
+        bathrooms: 2,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638887975175652172-2207250411571157.jpg?aio=w-360;h-225;crop;',
+        description: 'Lodge with lake views.'
+      },
+      {
+        id: 19,
+        title: 'Modern City Flat',
+        type: 'City Rentals',
+        location: 'London, UK',
+        price: 220,
+        bedrooms: 2,
+        bathrooms: 1,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638889560145210776-2407251213341334.jpg?aio=w-360;h-225;crop;',
+        description: 'Modern flat in central London.'
+      },
+      {
+        id: 20,
+        title: 'Parisian Apartment',
+        type: 'Cozy Apartments',
+        location: 'Paris, France',
+        price: 210,
+        bedrooms: 1,
+        bathrooms: 1,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638810898207722800-2404251110201020.jpeg?aio=w-360;h-225;crop;',
+        description: 'Charming apartment in Paris.'
+      },
+      {
+        id: 21,
+        title: 'Luxury Beach Condo',
+        type: 'Luxury Living',
+        location: 'Gold Coast, Australia',
+        price: 600,
+        bedrooms: 4,
+        bathrooms: 3,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638802307161921894-1404251231563156.jpeg?aio=w-360;h-225;crop;',
+        description: 'Beachfront luxury condo.'
+      },
+      {
+        id: 22,
+        title: 'Budget Hostel Room',
+        type: 'Budget Friendly Stays',
+        location: 'Berlin, Germany',
+        price: 50,
+        bedrooms: 1,
+        bathrooms: 1,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638823161139071971-0805250348334833.jpeg?aio=w-360;h-225;crop;',
+        description: 'Simple hostel room.'
+      },
+      {
+        id: 23,
+        title: 'Mountain Escape',
+        type: 'Nature Escapes',
+        location: 'Zermatt, Switzerland',
+        price: 350,
+        bedrooms: 3,
+        bathrooms: 2,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638889595060727623-2407250111461146.png?aio=w-360;h-225;crop;',
+        description: 'Chalet with mountain views.'
+      },
+      {
+        id: 24,
+        title: 'Orlando Resort Home',
+        type: 'Vacation Homes',
+        location: 'Orlando, FL',
+        price: 330,
+        bedrooms: 4,
+        bathrooms: 3,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638885170922771059-1907251018121812.jpeg?aio=w-360;h-225;crop;',
+        description: 'Resort-style vacation home.'
+      },
+      {
+        id: 25,
+        title: 'Budget Guesthouse',
+        type: 'Budget Friendly Stays',
+        location: 'Bangkok, Thailand',
+        price: 40,
+        bedrooms: 1,
+        bathrooms: 1,
+        imageUrl: 'https://static.squareyards.com/resources/images/bangalore/tn-projectflagship/tn-embassy-verde-project-flagship.jpg?aio=w-360;h-304;crop;',
+        description: 'Affordable guesthouse.'
+      },
+      {
+        id: 26,
+        title: 'Jungle Nature Retreat',
+        type: 'Nature Escapes',
+        location: 'Ubud, Bali',
+        price: 250,
+        bedrooms: 2,
+        bathrooms: 2,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638884626065100878-180725071006106.jpg?aio=w-360;h-225;crop;',
+        description: 'Retreat in the jungle.'
+      },
+      {
+        id: 27,
+        title: 'Tokyo City Studio',
+        type: 'City Rentals',
+        location: 'Tokyo, Japan',
+        price: 160,
+        bedrooms: 1,
+        bathrooms: 1,
+        imageUrl: 'https://static.squareyards.com/resources/images/bangalore/tn-projectflagship/tn-godrej-lakeside-orchard-project-flagship.jpg?aio=w-360;h-304;crop;',
+        description: 'Studio in central Tokyo.'
+      },
+      {
+        id: 28,
+        title: 'Barcelona Apartment',
+        type: 'Cozy Apartments',
+        location: 'Barcelona, Spain',
+        price: 180,
+        bedrooms: 2,
+        bathrooms: 1,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638823161139071971-0805250348334833.jpeg?aio=w-360;h-225;crop;',
+        description: 'Sunny apartment in Barcelona.'
+      },
+      {
+        id: 29,
+        title: 'Luxury Lake Villa',
+        type: 'Luxury Living',
+        location: 'Como, Italy',
+        price: 800,
+        bedrooms: 6,
+        bathrooms: 5,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638810898207722800-2404251110201020.jpeg?aio=w-360;h-225;crop;',
+        description: 'Villa on Lake Como.'
+      },
+      {
+        id: 30,
+        title: 'Budget Capsule',
+        type: 'Budget Friendly Stays',
+        location: 'Tokyo, Japan',
+        price: 35,
+        bedrooms: 1,
+        bathrooms: 1,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638889560145210776-2407251213341334.jpg?aio=w-360;h-225;crop;',
+        description: 'Capsule hotel experience.'
+      },
+      {
+        id: 31,
+        title: 'Rainforest Nature Home',
+        type: 'Nature Escapes',
+        location: 'Amazonas, Brazil',
+        price: 270,
+        bedrooms: 3,
+        bathrooms: 2,
+        imageUrl: 'https://img.squareyards.com/secondaryPortal/IN_638889560145210776-2407251213341334.jpg?aio=w-360;h-225;crop;',
+        description: 'Home in the rainforest.'
+      },
+      {
+        id: 32,
+        title: 'Disney Villa',
+        type: 'Vacation Homes',
+        location: 'Anaheim, CA',
+        price: 340,
+        bedrooms: 5,
+        bathrooms: 4,
+        imageUrl: 'https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 100w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 200w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 300w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 400w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 500w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 600w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 700w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 800w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 900w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 1000w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 1200w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 1400w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=1600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 1600w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=1800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 1800w, https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlfGVufDB8fDB8fHww 2000w',
+        description: 'Villa near Disneyland.'
+      },
+      {
+        id: 33,
+        title: 'Budget Beach Hut',
+        type: 'Budget Friendly Stays',
+        location: 'Goa, India',
+        price: 55,
+        bedrooms: 1,
+        bathrooms: 1,
+        imageUrl: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 100w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 200w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 300w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 400w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 500w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 600w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 700w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 800w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 900w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 1000w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 1200w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 1400w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 1600w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 1800w, https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdXNlfGVufDB8fDB8fHww 2000w',
+        description: 'Beach hut for budget travelers.'
+      },
+      {
+        id: 34,
+        title: 'Safari Nature Lodge',
+        type: 'Nature Escapes',
+        location: 'Nairobi, Kenya',
+        price: 260,
+        bedrooms: 2,
+        bathrooms: 2,
+        imageUrl: 'https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 100w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 200w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 300w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 400w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 500w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 600w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 700w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 800w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 900w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 1000w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 1200w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 1400w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=1600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 1600w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=1800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 1800w, https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 2000w',
+        description: 'Lodge near safari parks.'
+      },
+      {
+        id: 35,
+        title: 'Sydney City Apartment',
+        type: 'City Rentals',
+        location: 'Sydney, Australia',
+        price: 210,
+        bedrooms: 2,
+        bathrooms: 2,
+        imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 100w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 200w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 300w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 400w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 500w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 600w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 700w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 800w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 900w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 1000w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 1200w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 1400w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 1600w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 1800w, https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D 2000w'
+      },
+      {
+        id: 36,
+        title: 'Vienna Cozy Flat',
+        type: 'Cozy Apartments',
+        location: 'Vienna, Austria',
+        price: 160,
+        bedrooms: 1,
+        bathrooms: 1,
+        imageUrl: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 100w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 200w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 300w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 400w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 500w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 600w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 700w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 800w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 900w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 1000w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 1200w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 1400w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 1600w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 1800w, https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 2000w',
+        description: 'Cozy flat in Vienna.'
+      },
+      {
+        id: 37,
+        title: 'Luxury Palace Suite',
+        type: 'Luxury Living',
+        location: 'Dubai, UAE',
+        price: 1200,
+        bedrooms: 7,
+        bathrooms: 6,
+        imageUrl: 'https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 100w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 200w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 300w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 400w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 500w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 600w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 700w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 800w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 900w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 1000w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 1200w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 1400w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=1600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 1600w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=1800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 1800w, https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D 2000w',
+        description: 'Palace suite with luxury amenities.'
+      },
+      {
+        id: 38,
+        title: 'Budget Downtown Room',
+        type: 'Budget Friendly Stays',
+        location: 'Toronto, Canada',
+        price: 75,
+        bedrooms: 1,
+        bathrooms: 1,
+        imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 100w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 200w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 300w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 400w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 500w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 600w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 700w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 800w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 900w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 1000w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 1200w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 1400w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 1600w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 1800w, https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D 2000w',
+        description: 'Affordable room in downtown Toronto.'
+      },
+      {
+        id: 39,
+        title: 'Alpine Nature Chalet',
+        type: 'Nature Escapes',
+        location: 'Innsbruck, Austria',
+        price: 230,
+        bedrooms: 3,
+        bathrooms: 2,
+        imageUrl: 'https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 100w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 200w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 300w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 400w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 500w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 600w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 700w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 800w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 900w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 1000w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 1200w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 1400w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=1600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 1600w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=1800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 1800w, https://plus.unsplash.com/premium_photo-1676968002767-1f6a09891350?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 2000w',
+        description: 'Chalet in the Alps.'
+      },
+      {
+        id: 40,
+        title: 'Orlando Family Resort',
+        type: 'Vacation Homes',
+        location: 'Orlando, FL',
+        price: 310,
+        bedrooms: 4,
+        bathrooms: 3,
+        imageUrl: '',
+        imageUrl: 'https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=100&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 100w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 200w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 300w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 400w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 500w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 600w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 700w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 800w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 900w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 1000w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 1200w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=1400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 1400w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=1600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 1600w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=1800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 1800w, https://plus.unsplash.com/premium_photo-1676823547752-1d24e8597047?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D 2000w',
+        description: 'Family-friendly resort home.'
+      },
+    ];
+    
+    export default mockProperties;
   

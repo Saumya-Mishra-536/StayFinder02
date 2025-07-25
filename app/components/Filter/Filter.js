@@ -70,7 +70,7 @@ function Filters({ onFilterChange }) {
           </select>
         </div>
 
-        <div>
+        {/* <div>
           <label className="block text-gray-700 text-sm font-semibold mb-2">
             Price Range (in Crores)
           </label>
@@ -79,8 +79,8 @@ function Filters({ onFilterChange }) {
               <span className="text-blue-600">₹{filters.minPrice} Cr</span>
               <span className="text-indigo-600">₹{filters.maxPrice} Cr</span>
             </div>
-            <div className="space-y-3">
-              <div>
+            <div className="space-y-3"> */}
+              {/* <div>
                 <label className="text-xs text-gray-500">Min Price</label>
                 <input
                   type="range"
@@ -91,8 +91,8 @@ function Filters({ onFilterChange }) {
                   onChange={handleSliderChange}
                   className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                 />
-              </div>
-              <div>
+              </div> */}
+              {/* <div>
                 <label className="text-xs text-gray-500">Max Price</label>
                 <input
                   type="range"
@@ -103,10 +103,10 @@ function Filters({ onFilterChange }) {
                   onChange={handleSliderChange}
                   className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                 />
-              </div>
-            </div>
+              </div> */}
+            {/* </div>
           </div>
-        </div>
+        </div> */}
 
         <div>
           <label className="block text-gray-700 text-sm font-semibold mb-2">Bedrooms</label>
